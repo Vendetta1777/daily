@@ -1,0 +1,37 @@
+name: daily-activity
+
+# Runs every day and makes one tiny commit so the repo shows daily activity.
+# Also runnable on demand from the Actions tab (workflow_dispatch).
+on:
+  schedule:
+    # 05:23 UTC daily. Off-peak + odd minute so GitHub is less likely to delay it.
+    - cron: "23 5 * * *"
+  workflow_dispatch:
+
+# Allow the built-in token to push the commit back to the repo.
+permissions:
+  contents: write
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Write today's timestamp
+        run: date -u +"%Y-%m-%dT%H:%M:%SZ" > activity.log
+
+      - name: Commit and push if there is a change
+        run: |
+          # Author email must be a verified email on the account for the
+          # commit to count on the contribution graph.
+          git config user.name  "Vendetta1777"
+          git config user.email "vedshrinivas1777@gmail.com"
+          git add activity.log
+          if git diff --cached --quiet; then
+            echo "No change today — nothing to commit."
+          else
+            git commit -m "chore: daily activity $(date -u +%Y-%m-%d)"
+            git push
+          fi
