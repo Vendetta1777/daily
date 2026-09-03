@@ -6,3 +6,5 @@ repo (and my contribution graph) showing regular activity.
 - **Workflow:** [`.github/workflows/daily.yml`](.github/workflows/daily.yml)
 - **What it does:** writes the current UTC timestamp to `activity.log` and commits it.
 - **When:** 05:23 UTC daily, or on demand via the Actions tab.
+
+See [`log.md`](log.md) for the running daily log.
