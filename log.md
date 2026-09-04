@@ -1,6 +1,6 @@
 # Daily log
 
-A running log — one entry each day.
+A running log — one entry each day. Newest entries are at the bottom.
 
 - 2026-09-02 — Day 1: set up the repo and started the daily log.
 - 2026-09-02 — Added a notes section to keep the log tidy going forward.
