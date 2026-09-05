@@ -10,3 +10,4 @@ A running log — one entry each day. Newest entries are at the bottom.
 - 2026-09-04 — Clarified that newest entries go at the bottom.
 - 2026-09-05 — Day 4: six-commit day, let's go.
 - 2026-09-05 — Added a .gitignore to keep OS junk out of the repo.
+- 2026-09-05 — Added a short "about this repo" note.
