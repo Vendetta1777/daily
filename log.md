@@ -31,3 +31,4 @@ A running log — one entry each day. Newest entries are at the bottom.
 - 2026-09-06 — (14/17) .
 - 2026-09-06 — (15/17) one more entry.
 - 2026-09-06 — (16/17) nudging the log forward.
+- 2026-09-06 — (17/17) small wording fix.
