@@ -67,3 +67,4 @@ A running log — one entry each day. Newest entries are at the bottom.
 - 2026-09-09 — (5/6) nudging the log forward.
 - 2026-09-09 — (6/6) jotting something down.
 - 2026-09-10 — (1/14) quick touch-up.
+- 2026-09-10 — (2/14) small wording fix.
