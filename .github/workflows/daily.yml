@@ -1,6 +1,7 @@
 name: daily-activity
 
-# Runs every day and makes one tiny commit so the repo shows daily activity.
+# Runs every day and makes a RANDOM number of tiny commits (5-10) so the repo
+# shows organic-looking daily activity even on days I don't do it manually.
 # Also runnable on demand from the Actions tab (workflow_dispatch).
 on:
   schedule:
@@ -8,7 +9,7 @@ on:
     - cron: "23 5 * * *"
   workflow_dispatch:
 
-# Allow the built-in token to push the commit back to the repo.
+# Allow the built-in token to push the commits back to the repo.
 permissions:
   contents: write
 
@@ -19,19 +20,32 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
-      - name: Write today's timestamp
-        run: date -u +"%Y-%m-%dT%H:%M:%SZ" > activity.log
-
-      - name: Commit and push if there is a change
+      - name: Make a random number of commits (5-10)
         run: |
           # Author email must be a verified email on the account for the
-          # commit to count on the contribution graph.
+          # commits to count on the contribution graph.
           git config user.name  "Vendetta1777"
           git config user.email "vedshrinivas1777@gmail.com"
-          git add activity.log
-          if git diff --cached --quiet; then
-            echo "No change today — nothing to commit."
-          else
-            git commit -m "chore: daily activity $(date -u +%Y-%m-%d)"
-            git push
-          fi
+
+          DATE=$(date -u +%Y-%m-%d)
+          N=$(( (RANDOM % 6) + 5 ))   # random 5..10
+          echo "Rolled $N commits for $DATE"
+
+          notes=(
+            "tweaked a log entry" "small wording fix" "kept the routine going"
+            "quick note to self" "another line for the log" "steady progress today"
+            "minor cleanup" "adding a thought" "one more entry" "keeping momentum"
+            "little update" "jotting something down" "carrying on"
+            "nudging the log forward" "small daily bit" "staying consistent"
+            "wrapping a piece up" "quick touch-up" "logging a moment"
+            "another small step"
+          )
+
+          for i in $(seq 1 $N); do
+            note=${notes[$(( RANDOM % ${#notes[@]} ))]}
+            echo "- $DATE — ($i/$N) $note. [auto]" >> log.md
+            git add log.md
+            git commit -q -m "log: $note ($i/$N)"
+          done
+
+          git push
