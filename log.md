@@ -444,3 +444,4 @@ A running log — one entry each day. Newest entries are at the bottom.
 - 2026-10-27 — (2/7) small wording fix. [auto]
 - 2026-10-27 — (3/7) another line for the log. [auto]
 - 2026-10-27 — (4/7) tweaked a log entry. [auto]
+- 2026-10-27 — (5/7) minor cleanup. [auto]
