@@ -603,3 +603,4 @@ A running log — one entry each day. Newest entries are at the bottom.
 - 2026-11-19 — (4/7) quick note to self. [auto]
 - 2026-11-19 — (5/7) small daily bit. [auto]
 - 2026-11-19 — (6/7) another line for the log. [auto]
+- 2026-11-19 — (7/7) small wording fix. [auto]
