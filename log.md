@@ -614,3 +614,4 @@ A running log — one entry each day. Newest entries are at the bottom.
 - 2026-11-20 — (8/8) carrying on. [auto]
 - 2026-11-21 — (1/6) quick note to self. [auto]
 - 2026-11-21 — (2/6) small daily bit. [auto]
+- 2026-11-21 — (3/6) small wording fix. [auto]
